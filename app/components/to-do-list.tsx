@@ -52,12 +52,12 @@ export default function ToDoList() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="bg-white text-black p-3 h-12 border border-fuchsia-500 rounded-lg outline-none"
-          placeholder="Write a new task"
+          className="bg-white text-black p-3 h-12 border-2 border-fuchsia-500 rounded-lg outline-none"
+          placeholder="Add a new task"
         />
         <button
           onClick={addTask}
-          className="bg-fuchsia-500 border border-black text-white font-bold h-12 px-4 py-3 rounded-lg">
+          className="bg-fuchsia-500 border-2 border-white text-white font-bold h-12 px-4 py-3 rounded-lg cursor-pointer hover:bg-fuchsia-600 transition-colors">
           Add
         </button>
       </div>
@@ -66,7 +66,7 @@ export default function ToDoList() {
         {tasks.map((task) => (
           <li
             key={task.id}
-            className="flex items-center gap-3 p-3 border border-red-600 rounded-lg">
+            className="flex items-center gap-3 p-3 border border-fuchsia-600 rounded-lg">
             <input
               type="checkbox"
               checked={task.done}
@@ -79,7 +79,7 @@ export default function ToDoList() {
             </span>
             <button
               onClick={() => deleteTask(task.id)}
-              className="bg-red-500 text-white px-3 py-1 rounded-lg text-sm">
+              className="bg-red-500 text-white px-3 py-1 rounded-lg cursor-pointer hover:bg-red-600 transition-colors">
               Delete
             </button>
           </li>
